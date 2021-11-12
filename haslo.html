@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Miernik jakości hasła</title>
+  <link rel="stylesheet" href="styl.css">
+  <link rel="stylesheet" href="styl1.css">
+ </head>
+ <body>
+  <div id="baner">
+	<h1><a href="index.html">Sprawdź swoje hasło</a></h1>
+  </div>
+  <div id="lewy">
+   <h2>Wybierz</h2>
+	   <ol>
+		<li><a href="haslo.html">Sprawdź hasło</a></li>
+		<li><a href="zasady.html">Zasady tworzenia hasła</a></li>
+	   </ol>
+  </div>
+  <div id="prawy">
+   <p>Twoje hasło
+	<input type="password" id="haslo">
+	<input type="button" value="sprawdź" onclick="f()">
+   </p>
+   <p id="p1"></p>
+  </div>
+  <div id="stopka">
+   <h3>Miernik jakości hasła</h3>
+  </div>
+<script type="text/javascript">
+function f(){
+var x = document.getElementById("haslo").value;
+ if(x==""){
+	 p1.style.color="red"
+	 p1.innerHTML="WPISZ HASŁO"
+ }
+ else if(x.search("[0-9]")>=0 && x.length>7){
+	 p1.style.color="green"
+	 p1.innerHTML="DOBRE"        
+ }
+ else if(x.search("[0-9]")>=0 && x.length>=5 && x.length<=7){
+	 p1.style.color="yellow"
+	 p1.innerHTML="ŚREDNIE"       
+ }
+ else {
+	 p1.style.color="red"
+	 p1.innerHTML="SŁABE"
+ }
+}
+</script>  
+ </body>
+</html>
